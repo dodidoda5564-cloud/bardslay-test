@@ -1,0 +1,312 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bardsley Academy • Live Luxury</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
+body{background:#000;color:#fff;overflow-x:hidden}
+
+/* ================= LOADER ================= */
+#loader{
+position:fixed;inset:0;background:#000;
+display:flex;align-items:center;justify-content:center;
+flex-direction:column;z-index:9999;
+transition:opacity 1s ease
+}
+#loader h1{
+font-size:2.6rem;
+background:linear-gradient(90deg,#ffd700,#ff8c00);
+-webkit-background-clip:text;color:transparent;
+animation:pulse 1.6s infinite
+}
+.load-bar{
+width:240px;height:6px;
+background:rgba(255,255,255,.15);
+border-radius:10px;
+overflow:hidden;margin-top:20px
+}
+.load-bar span{
+display:block;height:100%;
+width:0%;
+background:linear-gradient(90deg,#ffd700,#ff8c00);
+animation:load 2.5s forwards
+}
+@keyframes load{to{width:100%}}
+@keyframes pulse{
+0%,100%{opacity:.7}
+50%{opacity:1}
+}
+
+/* ================= HERO ================= */
+.hero{
+height:100vh;position:relative;
+display:flex;align-items:center;justify-content:center;
+text-align:center
+}
+.hero video{
+position:absolute;inset:0;
+width:100%;height:100%;
+object-fit:cover;filter:brightness(.35)
+}
+.hero-content{position:relative;z-index:2;max-width:760px;padding:20px}
+.hero-content h1{
+font-size:3.8rem;
+background:linear-gradient(90deg,#ffd700,#ff8c00);
+-webkit-background-clip:text;color:transparent;
+animation:glow 3s infinite alternate
+}
+@keyframes glow{
+from{text-shadow:0 0 10px rgba(255,200,0,.4)}
+to{text-shadow:0 0 30px rgba(255,200,0,.9)}
+}
+.hero-content p{margin-top:20px;font-size:1.2rem;opacity:.85}
+.btn{
+margin-top:32px;display:inline-block;
+padding:14px 38px;border-radius:30px;
+background:linear-gradient(90deg,#ffd700,#ff8c00);
+color:#000;font-weight:600;text-decoration:none;
+box-shadow:0 0 25px rgba(255,200,0,.5);
+transition:.4s
+}
+.btn:hover{transform:scale(1.08)}
+
+/* Particles */
+.particle{
+position:absolute;width:6px;height:6px;
+background:rgba(255,215,0,.7);
+border-radius:50%;
+animation:float 8s infinite ease-in-out
+}
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-120px)}
+100%{transform:translateY(0)}
+}
+
+/* ================= SECTIONS ================= */
+section{padding:100px 20px;text-align:center}
+h2{color:#ffd700;font-size:2.4rem;margin-bottom:20px}
+
+.cards{
+margin-top:50px;display:flex;
+justify-content:center;flex-wrap:wrap;gap:25px
+}
+.card{
+width:300px;padding:30px;border-radius:22px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,215,0,.3);
+backdrop-filter:blur(14px);
+opacity:0;transform:translateY(60px);
+transition:all 1s ease
+}
+.card.show{opacity:1;transform:translateY(0)}
+.card:hover{
+transform:translateY(-15px);
+box-shadow:0 0 35px rgba(255,200,0,.45)
+}
+
+.long-text{
+max-width:900px;margin:auto;
+opacity:.85;line-height:1.8
+}
+
+/* ================= FOOTER ================= */
+footer{
+padding:40px;text-align:center;
+opacity:.6;border-top:1px solid rgba(255,215,0,.2)
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+<h1>Bardsley Academy</h1>
+<div class="load-bar"><span></span></div>
+<p style="opacity:.6;margin-top:10px">Preparing Excellence...</p>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<video autoplay muted loop>
+<source src="https://cdn.coverr.co/videos/coverr-abstract-liquid-motion-9714/1080p.mp4" type="video/mp4">
+</video>
+
+<div class="particle" style="top:70%;left:20%"></div>
+<div class="particle" style="top:60%;left:55%;animation-delay:2s"></div>
+<div class="particle" style="top:80%;left:75%;animation-delay:4s"></div>
+
+<div class="hero-content">
+<h1>Modern Luxury School Experience</h1>
+<p>Where tradition meets innovation and excellence becomes a lifestyle.</p>
+<a href="#about" class="btn">Explore Academy</a>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Bardsley Academy</h2>
+<p class="long-text">
+Bardsley Academy is a premier educational institution committed to holistic
+development, academic excellence, and future-ready learning. We combine
+traditional values with modern technology to nurture confident global citizens.
+</p>
+</section>
+
+<!-- HISTORY -->
+<section>
+<h2>Our History</h2>
+<p class="long-text">
+Founded in 2001, Bardsley Academy began with a small group of passionate educators.
+Over the years, it evolved into a benchmark of luxury education, embracing digital
+classrooms, global curricula, and innovation-driven teaching methodologies.
+</p>
+
+<div class="cards">
+<div class="card"><h3>2001</h3><p>Academy Founded</p></div>
+<div class="card"><h3>2010</h3><p>International Curriculum</p></div>
+<div class="card"><h3>2022</h3><p>AI & Smart Labs</p></div>
+</div>
+</section>
+
+<!-- TEACHERS -->
+<section>
+<h2>Our Esteemed Faculty</h2>
+<div class="cards">
+<div class="card">
+<h3>Dr. A. Sharma</h3>
+<p>Principal</p>
+<p>Leadership & Innovation</p>
+</div>
+
+<div class="card">
+<h3>Ms. R. Patel</h3>
+<p>Science Head</p>
+<p>STEM & Research</p>
+</div>
+
+<div class="card">
+<h3>Mr. K. Singh</h3>
+<p>Technology Educator</p>
+<p>AI & Cybersecurity</p>
+</div>
+</div>
+</section>
+
+<!-- ACADEMICS -->
+<section>
+<h2>Academics & Facilities</h2>
+<div class="cards">
+<div class="card"><h3>Smart Classrooms</h3><p>Interactive digital learning</p></div>
+<div class="card"><h3>Luxury Labs</h3><p>Science & Innovation spaces</p></div>
+<div class="card"><h3>Global Exposure</h3><p>International standards</p></div>
+</div>
+</section>
+
+<footer>
+© 2026 Bardsley Academy • Live Luxury Edition
+</footer>
+
+<script>
+window.onload=()=>{
+setTimeout(()=>{
+loader.style.opacity="0";
+setTimeout(()=>loader.style.display="none",1000);
+},1800)
+};
+
+const cards=document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+cards.forEach(c=>{
+if(c.getBoundingClientRect().top < innerHeight-80){
+c.classList.add("show")
+}
+})
+});
+</script>
+
+<style>
+/* ===== CINEMATIC NOISE ===== */
+.noise{
+position:fixed;inset:0;
+background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+pointer-events:none;z-index:999;
+mix-blend-mode:overlay;
+}
+
+/* ===== AMBIENT GRADIENT LIGHT ===== */
+.light{
+position:fixed;
+width:420px;height:420px;
+border-radius:50%;
+background:radial-gradient(circle,rgba(255,215,0,.22),transparent 60%);
+filter:blur(60px);
+pointer-events:none;
+z-index:0;
+transition:transform .4s ease;
+}
+.l1{top:15%;left:10%}
+.l2{bottom:20%;right:12%}
+.l3{top:45%;left:45%}
+
+/* ===== MAGNETIC BUTTON ===== */
+.btn{
+position:relative;
+transition:transform .25s ease;
+will-change:transform;
+}
+
+/* ===== CINEMATIC SCROLL FADE ===== */
+section{
+opacity:0;
+transform:translateY(60px);
+transition:opacity 1.2s ease,transform 1.2s ease;
+}
+section.reveal{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+
+<div class="noise"></div>
+<div class="light l1"></div>
+<div class="light l2"></div>
+<div class="light l3"></div>
+
+<script>
+/* ===== PARALLAX LIGHT FOLLOW ===== */
+const lights=document.querySelectorAll('.light');
+document.addEventListener('mousemove',e=>{
+lights.forEach((l,i)=>{
+l.style.transform=
+`translate(${(e.clientX-window.innerWidth/2)*0.02*(i+1)}px,
+${(e.clientY-window.innerHeight/2)*0.02*(i+1)}px)`;
+});
+});
+
+/* ===== MAGNETIC BUTTON ===== */
+document.querySelectorAll('.btn').forEach(btn=>{
+btn.addEventListener('mousemove',e=>{
+const r=btn.getBoundingClientRect(),
+x=e.clientX-r.left-r.width/2,
+y=e.clientY-r.top-r.height/2;
+btn.style.transform=`translate(${x*.15}px,${y*.15}px)`;
+});
+btn.addEventListener('mouseleave',()=>btn.style.transform='translate(0,0)');
+});
+
+/* ===== SCROLL CINEMATIC REVEAL ===== */
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add('reveal');
+});
+},{threshold:.15});
+document.querySelectorAll('section').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
